@@ -13,6 +13,9 @@
     "gulp-hb": "^2.6.1",
     "gulp-sass": "^2.0.4",
     "gulp-less": "^3.0.3",
-    "gulp-imagemin": "^2.3.0"
+    "gulp-imagemin": "^2.3.0",
+    "gulp-rename": "^1.2.2",
+    "glob": "^5.0.14",
+    "lodash": "^3.10.0"
   }
 }
