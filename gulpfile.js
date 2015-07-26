@@ -27,7 +27,7 @@ function getHbContext () {
 				if (albumPosition >= 0) {
 					context.albums[albumPosition].pictures.push({
 						fullsize: ['pictures', 'full', albumName, file.base].join('/'),
-						thumb: ['pictures', 'thumbs', albumName, file.base].join('/')
+						thumb: ['pictures', 'thumbs', albumName, file.name+'.jpeg'].join('/')
 					});
 				}
 			}
