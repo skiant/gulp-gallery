@@ -7,15 +7,16 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-load-plugins": "^1.0.0-rc.1",
-    "gulp-image-resize": "^0.6.0",
-    "gulp-hb": "^2.6.1",
-    "gulp-sass": "^2.0.4",
-    "gulp-less": "^3.0.3",
-    "gulp-imagemin": "^2.3.0",
-    "gulp-rename": "^1.2.2",
+    "concurrent-transform": "^1.0.0",
     "glob": "^5.0.14",
+    "gulp": "^3.9.0",
+    "gulp-hb": "^2.6.1",
+    "gulp-image-resize": "^0.6.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
     "lodash": "^3.10.0"
   }
 }

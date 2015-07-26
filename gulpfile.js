@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var glob = require('glob');
+var parallel = require('concurrent-transform');
+var os = require('os');
 var path = require('path');
 var _ = require('lodash');
 
@@ -50,12 +52,16 @@ gulp.task('images', function () {
 		.pipe(gulp.dest('dist/pictures/full'));
 
 	gulp.src(pictures)
-		.pipe(plugins.imageResize({
-			width: 150,
-			height: 150,
-			crop: true,
-			upscale: false
-		}))
+		.pipe(parallel(
+			plugins.imageResize({
+				width: 150,
+				height: 150,
+				crop: true,
+				upscale: false,
+				format: 'jpeg'
+			}),
+			os.cpus().length
+		))
 		.pipe(plugins.imagemin())
 		.pipe(gulp.dest('dist/pictures/thumbs'));
 });
