@@ -44,3 +44,18 @@ gulp.task('html', function () {
 		.pipe(gulp.dest('dist'));
 });
 
+gulp.task('images', function () {
+	gulp.src(pictures)
+		.pipe(plugins.imagemin())
+		.pipe(gulp.dest('dist/pictures/full'));
+
+	gulp.src(pictures)
+		.pipe(plugins.imageResize({
+			width: 150,
+			height: 150,
+			crop: true,
+			upscale: false
+		}))
+		.pipe(plugins.imagemin())
+		.pipe(gulp.dest('dist/pictures/thumbs'));
+});
