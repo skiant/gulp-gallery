@@ -26,8 +26,8 @@ function getHbContext () {
 				var albumPosition = _.findIndex(context.albums, {name: albumName});
 				if (albumPosition >= 0) {
 					context.albums[albumPosition].pictures.push({
-						fullsize: ['pictures', 'full', albumName, file.base].join('/'),
-						thumb: ['pictures', 'thumbs', albumName, file.name+'.jpeg'].join('/')
+						fullsize: ['/pictures', 'full', albumName, file.base].join('/'),
+						thumb: ['/pictures', 'thumbs', albumName, file.name+'.jpeg'].join('/')
 					});
 				}
 			}
@@ -64,4 +64,10 @@ gulp.task('images', function () {
 		))
 		.pipe(plugins.imagemin())
 		.pipe(gulp.dest('dist/pictures/thumbs'));
+});
+
+gulp.task('css', function () {
+	gulp.src('src/sass/style.scss')
+		.pipe(plugins.sass().on('error', plugins.sass.logError))
+		.pipe(gulp.dest('dist/css/'));
 });

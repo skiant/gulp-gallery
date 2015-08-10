@@ -1,0 +1,28 @@
+// COLORS
+$jm_blue: #010178;
+$jm_aqua: #009C9E;
+$jm_fadedBlue: #3C596B;
+$jm_darkGray: #1D1D1B;
+$jm_brightYellow: #FFE000;
+$jm_darkYellow: #FCC000;
+$jm_gold: #CC8A1A;
+$jm_magenta: #E40050;
+
+body{
+	font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding: 2em;
+}
+
+.pictures-album{
+	list-style: none;
+	margin: 0 0 1em 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+	}
+}
+
+.fancybox-overlay {
+	background: rgba(black, .9);
+}
