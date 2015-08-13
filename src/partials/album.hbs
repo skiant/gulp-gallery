@@ -1,11 +1,11 @@
-<div class="album">
-	<h2 id="{{name}}">{{name}}</h2>
+<div class="album" id="{{name}}">
+	<div class="album-header">
+		<h2 class="album-name">{{name}}</h2>
+	</div>
 
-	<ul class="pictures-album">
+	<div class="pictures-album">
 		{{#each pictures}}
-			<li class="picture">
-				<a href="{{fullsize}}" rel="{{../name}}"><img src="{{thumb}}" alt="" /></a>
-			</li>
+			<a class="picture" href="{{fullsize}}" rel="{{../name}}"><img src="{{thumb}}" alt="" /></a>
 		{{/each}}
-	</ul>
+	</div>
 </div>

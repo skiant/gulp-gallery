@@ -7,7 +7,7 @@ require('fancybox/dist/css/jquery.fancybox.css');
 
 // bind fancybox
 $(document).ready(function() {
-	$(".picture a").fancybox({
+	$(".picture").fancybox({
 		prevEffect	: 'none',
 		nextEffect	: 'none',
 		helpers	: {

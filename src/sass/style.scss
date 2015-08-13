@@ -8,17 +8,71 @@ $jm_darkYellow: #FCC000;
 $jm_gold: #CC8A1A;
 $jm_magenta: #E40050;
 
+html{
+	margin: 0;
+	padding: 0;
+}
+
 body{
 	font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-	padding: 2em;
+	padding: 0 2em 2em 2em;
+}
+
+a {
+	color: $jm_gold;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+img{
+	max-width: 100%;
+}
+
+
+.nav{
+	list-style: none;
+  margin: 0 0 1em 0;
+  position: fixed;
+  background-color: white;
+  display: block;
+  width: 100%;
+  padding: 1em 2em;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	box-shadow: 0 0 10px rgba(black, .2);
+
+	li {
+		display: inline-block;
+
+		& + li {
+			margin-left: 1em;
+		}
+
+		a{
+			background: rgba(white, .2);
+			padding: 1em 0;
+
+			&:hover{
+				background: rgba(white, .4);
+			}
+		}
+
+	}
+}
+
+.album {
+	padding-top: 4em;
 }
 
 .pictures-album{
-	list-style: none;
 	margin: 0 0 1em 0;
 	padding: 0;
 
-	li {
+	.picture {
 		display: inline-block;
 	}
 }
