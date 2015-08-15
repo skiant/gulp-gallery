@@ -4,6 +4,7 @@ var glob = require('glob');
 var parallel = require('concurrent-transform');
 var os = require('os');
 var path = require('path');
+var fs = require('fs');
 var _ = require('lodash');
 
 var pictures = 'src/pictures/**/*';
@@ -14,6 +15,9 @@ function getHbContext () {
 			albums: []
 		};
 		glob.sync(pictures).forEach(function (file) {
+			var albumName;
+			var albumPosition;
+
 			file = path.parse(file);
 			// add directories to the albums
 			if(file.base === file.name) {
@@ -21,9 +25,16 @@ function getHbContext () {
 					name: file.name,
 					pictures: []
 				});
+			} else if (file.base === 'licence.txt') {
+				var licence = fs.readFileSync(path.join(file.dir, file.base), 'utf-8').trim();
+				albumName = file.dir.replace('src/pictures/', '');
+				albumPosition = _.findIndex(context.albums, {name: albumName});
+				if (albumPosition >= 0) {
+					context.albums[albumPosition].licence = licence;
+				}
 			} else {
-				var albumName = file.dir.replace('src/pictures/', '');
-				var albumPosition = _.findIndex(context.albums, {name: albumName});
+				albumName = file.dir.replace('src/pictures/', '');
+				albumPosition = _.findIndex(context.albums, {name: albumName});
 				if (albumPosition >= 0) {
 					context.albums[albumPosition].pictures.push({
 						fullsize: ['pictures', 'full', albumName, file.base].join('/'),
